@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Patterns</title>
+
+  <style>
+    .row div {
+      width: 10px;
+      height: 10px;
+      background-color: purple;
+      margin: 1px;
+      display: inline-block;
+    }
+    .row div.active {
+      background-color: seagreen;
+    }
+    .row div.inactive {
+      background-color: purple;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row"></div>
+  </div>
+  <script>
+    function randomBinary() {
+      let max = 1
+      let min = 0
+      return Math.floor(Math.random() * (max - min + 1))
+    }
+    for (let i=0; i<101; i++) {
+      let div = document.createElement('div')
+      div.classList.add(randomBinary() ? 'active' : 'inactive')
+      document.querySelector('.row').appendChild(div)
+    }
+
+    function duplicateRow() {
+      let firstRow = document.querySelector('.row')
+      let clone = firstRow.cloneNode(true)
+      document.querySelector('.container').appendChild(clone)
+    }
+    duplicateRow()
+  </script>
+</body>
+</html>
