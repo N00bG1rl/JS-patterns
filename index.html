@@ -28,23 +28,50 @@
     <div class="row"></div>
   </div>
   <script>
-    function randomBinary() {
+    function randomNumber() {
       let max = 1
       let min = 0
       return Math.floor(Math.random() * (max - min + 1))
     }
+
     for (let i=0; i<101; i++) {
-      let div = document.createElement('div')
-      div.classList.add(randomBinary() ? 'active' : 'inactive')
-      document.querySelector('.row').appendChild(div)
+      let newCube = document.createElement('div')
+      document.querySelector('.row').appendChild(newCube)
     }
 
-    function duplicateRow() {
-      let firstRow = document.querySelector('.row')
-      let clone = firstRow.cloneNode(true)
-      document.querySelector('.container').appendChild(clone)
+    function randomPattern(cube) {
+      for (let i=0; i<cube.childNodes.length; i++) {
+        let newCube = cube.childNodes[i]
+        newCube.classList.add(randomNumber() ? 'active' : 'inactive')
+      }
     }
-    duplicateRow()
+
+    randomPattern(document.querySelector('.row'))
+
+    function dublicateRow() {
+      let rows = document.querySelectorAll('.row')
+      let previousRow = rows[rows.length - 1]
+      let rowClone = previousRow.cloneNode(true)
+      document.querySelector('.container').appendChild(rowClone)
+      checkRow(rowClone, previousRow)
+    }
+    dublicateRow()
+    
+    
+    function checkRow(cube, cubeParent) {
+      for (let i=0; i<cube.childNodes.length; i++) {
+        let target = cube.childNodes[i]
+        let mainSibling = cubeParent.childNodes[i]
+        let prevSibling = mainSibling.previousElementSibling ||
+          cubeParent.childNodes[cubeParent.childNodes.length - 1]
+        let nextSibling = mainSibling.nextElementSibling ||
+          cubeParent.childNodes[0]
+        console.log('mainSibling', mainSibling)
+        console.log('prevSibling', prevSibling)
+        console.log('nextSibling', nextSibling)
+      }
+    }
+
   </script>
 </body>
 </html>
