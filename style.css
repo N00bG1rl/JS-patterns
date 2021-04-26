@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #D91E50;
+}
+.container {
+  width: 1010px;
+  margin: 0 auto;
+  border: 10px solid #1F598C;
+}
+.row {
+  width: 1010px;
+  height: 10px;
+  position: relative;
+  top: -4px;
+}
+.row .active,
+.row .inactive {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+.row .active {
+  background-color: #D91E50;
+}
+.row .inactive {
+  background-color: #1F598C;
+}
