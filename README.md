@@ -1,5 +1,5 @@
 # JavaScript created pattern
 
-*[https://n00bg1rl.github.io/JS-patterns/](###Look it here)
+[###Look it here](https://n00bg1rl.github.io/JS-patterns/)
 
 ![tekst alternatywny](image.png)
