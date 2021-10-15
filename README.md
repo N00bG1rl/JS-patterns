@@ -1,5 +1,21 @@
 # JavaScript created pattern
 
-[Create your own unique pattern](https://n00bg1rl.github.io/JS-patterns/)
+I created this to flex my DOM manipulation skills.
 
-![tekst alternatywny](image.png)
+# Created at
+
+April 24, 2021
+
+# Project is created with
+
+* JavaScript
+* HTML
+* CSS
+
+# View on browser
+
+## [https://n00bg1rl.github.io/JS-patterns/](https://n00bg1rl.github.io/JS-patterns/)
+
+# View as image
+
+![github](github.png)
